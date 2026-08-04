@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "npm install --include=dev",
-  "buildCommand": "npm run build -w @calorie/shared && npm run build -w @calorie/web",
+  "installCommand": "npm install --include=dev --workspace=@calorie/web --workspace=@calorie/shared --ignore-scripts",
+  "buildCommand": "npm run build -w @calorie/web",
   "outputDirectory": "apps/web/dist",
   "framework": null,
   "rewrites": [
