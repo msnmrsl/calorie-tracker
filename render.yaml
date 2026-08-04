@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: calorie-tracker-api
+    runtime: node
+    plan: free
+    rootDir: .
+    buildCommand: npm install && npm run build -w @calorie/shared
+    startCommand: npm run start -w @calorie/api
+    envVars:
+      - key: DEV_BYPASS_AUTH
+        value: "1"
+      - key: DATABASE_PATH
+        value: /opt/render/project/src/.data/calorie.db
+      - key: NODE_VERSION
+        value: "22"

@@ -1,0 +1,15 @@
+{
+  "name": "calorie-tracker",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @calorie/api & npm run dev -w @calorie/web",
+    "dev:api": "npm run dev -w @calorie/api",
+    "dev:web": "npm run dev -w @calorie/web",
+    "build": "npm run build -w @calorie/shared && npm run build -w @calorie/api && npm run build -w @calorie/web",
+    "db:seed": "npm run db:seed -w @calorie/api"
+  }
+}
